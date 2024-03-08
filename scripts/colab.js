@@ -57,7 +57,7 @@ const executeColabFile = (req, res, next) => {
     runColabScript(parse(data_new))
         .then((output) => {
             const formattedString = output.replace(/\n/g, ' ');
-            res.json(JSON.parse(formattedString));
+            res.send(JSON.parse(formattedString));
         })
         .catch((error) => {
             console.error('Error:', error);
